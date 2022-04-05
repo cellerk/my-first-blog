@@ -1,0 +1,22 @@
+{% extends 'hlipage/base.html' %}
+
+{% block content %}
+  <p> This is the output for author(s): </p> 
+    <ul>
+    {% for a in authorlist %} 
+      {{ a }} 
+    {% endfor %}
+    </ul>
+
+  <p>The date range is: {{ mindate }} to {{ maxdate }}</p>
+  <p>The total number of publications is: {{ citations|length }}</p>
+  
+  <p>Click on "Download results" to download the citations as csv.</p>
+        <button onclick="location.href='{% url 'download' %}'">Download</button> <hr> 
+    <ul>
+    {% for citation in citations %}
+      <li>{{ citation }}</li>
+    {% endfor %} 
+    </ul>
+
+{% endblock %}
