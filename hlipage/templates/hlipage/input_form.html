@@ -1,14 +1,16 @@
 {% extends 'hlipage/base.html' %}
 
 {% block content %}
+<p> Welome to the HLI Publication Scraper page. This page runs code to automatically scrape data from PubMed. <br></p>  
+
     <h2>Create your query here:</h2><br>
     <form method="POST" class="form">{% csrf_token %}
         <button type="button" id='check_all'>Select All Authors</button>
-        <button type="button" id='uncheck_all'>Clear Selection</button>
-
+        <button type="button" id='uncheck_all'>Clear Selection</button> <br><br>
+        
         {{ form.as_p }}
         <!--<button type="submit" class="save btn btn-secondary">Run Query</button> -->
-        <p>Click on "Execute script" to run the default code.</p>
+        <p>Click on "Execute script" to run the code and generate your citations.</p>
         <button onclick="location.href='{% url 'script' %}'">Execute script</button> <hr>
     </form>
 

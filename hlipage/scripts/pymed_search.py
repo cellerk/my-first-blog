@@ -3,7 +3,7 @@ from pymed import PubMed
 import json
 from datetime import date
 
-from .investigators import HLI_authorlist, all_PIs, all_PIs_dict
+from .investigators import all_PIs_dict
 
 import csv
 
@@ -12,31 +12,32 @@ import csv
 # https://www.ncbi.nlm.nih.gov/pmc/tools/developers/
 pubmed = PubMed(tool="MyTool", email="cellerk@yahoo.ca")
 
-mindate = "01/01/2000"
-maxdate = "02/02/2000"
+#mindate = "01/01/2000"
+#maxdate = "02/02/2000"
 
 # Create a GraphQL query in plain text
 # Functioning query (first line)
 #query = '(("2022/01/01"[Date - Create] : "2022/02/01"[Date - Create])) AND' + HLI_authorlist[1]
 
 # Build your query
-date_range = '''("2022/01/01"[Date - Publication] : "3000"[Date - Publication])'''
+#date_range = '''("2022/01/01"[Date - Publication] : "3000"[Date - Publication])'''
 #mindate = date.fromisoformat('2021-01-01')
 #maxdate = date.fromisoformat('2021-12-31')
 
 def create_citation_output(mdate: str, mxdate: str, alist):
     # Build the query based on the form input (mdate = mindate, mxdate = maxdate, alist = author list (str))
-    date_range = "'''(" +  mdate + "[Date - Publication] : " + mxdate + "[Date - Publication])"
+    date_range = "(" +  mdate + "[Date - Publication] : " + mxdate + "[Date - Publication])"
 
     # List of all properly-formatted citations 
     citation = []
 
     for a in alist:
 #         # Create the PubMed query for the specified date_range, iterating through all_PIs
-        query = date_range + " + " + all_PIs_dict.get(a)
-#         acc = acc+1
+        query = date_range + " AND " + all_PIs_dict.get(a)
+        print(query)
+#       acc = acc+1
        # Execute the query against the API (must be done separately for each PI)
-        results = pubmed.query(query, max_results=300)
+        results = pubmed.query(query, max_results=500)
 
          # Loop over the retrieved articles
         for article in results:
