@@ -5,13 +5,32 @@
 
     <h2>Create your query here:</h2><br>
     <form method="POST" class="form">{% csrf_token %}
-        <button type="button" id='check_all'>Select All Authors</button>
-        <button type="button" id='uncheck_all'>Clear Selection</button> <br><br>
-        
-        {{ form.as_p }}
-        <!--<button type="submit" class="save btn btn-secondary">Run Query</button> -->
-        <p>Click on "Execute script" to run the code and generate your citations.</p>
-        <button onclick="location.href='{% url 'script' %}'">Execute script</button> <hr>
+        <p> Either click on the "select all" button below, or individually choose which authors you would like to query: </p>
+        <button type="button" class="btn btn-outline-primary btn-sm" id='check_all'>Select All Authors</button>
+        <button type="button" class="btn btn-outline-primary btn-sm" id='uncheck_all'>Clear Selection</button> <br><br>
+        {% load crispy_forms_tags %}  
+        <!-- {{ form | crispy}} -->
+
+        <div class="row">
+            <div class="col">
+                {{form.or_choose_which_author|as_crispy_field}}
+                <!--{% for a in form.or_choose_which_author %} 
+                    {{ a }} &emsp;
+                {% endfor %} -->
+                <br>
+                {{form.min_date|as_crispy_field}}
+                {{form.max_date|as_crispy_field}} 
+                <br><br>
+            </div>
+        </div>
+
+        <!--<p>Click on "Execute script" to run the code and generate your citations.</p>
+        <button onclick="location.href='{% url 'script' %}'">Execute script</button> <hr>-->
+    
+        <button type="submit" class="btn btn-secondary btn-block">Run Query</button>
+        <br><br>
+        <button type="reset" onclick="location.href='{% url 'home' %}'" class="btn btn-secondary btn-block float-end">Reset Form</button>
+
     </form>
 
  {% endblock %}

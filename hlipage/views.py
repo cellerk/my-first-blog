@@ -1,10 +1,11 @@
 from django.http import HttpResponse
 from django.shortcuts import render, redirect
 from .models import Input
-from .forms import InputForm, InputQuery
+from .forms import InputForm, InputQuery, ExampleForm
 from datetime import datetime
 
 from .scripts import pymed_search
+from django.contrib import messages
 
 from django.core.cache import cache
 cache.clear()
@@ -23,8 +24,17 @@ def index(request):
 
 def post_new(request):
     if request.method == "POST":
+        #form = ExampleForm()
         form = InputQuery(request.POST)
         if form.is_valid():
+          
+            #inputquery.or_choose_which_authors = form.cleaned_data.get("or_choose_which_author")
+            #inputquery.min_date = form.cleaned_data['min_date'] #.strftime("%m/%d/%Y")
+            #inputquery.max_date = form.cleaned_data['max_date']
+
+            #inputquery.save()
+            #return HttpResponse('thank-you.html')
+
             mindate = form.cleaned_data['min_date'].strftime("%m/%d/%Y")
             maxdate = form.cleaned_data['max_date'].strftime("%m/%d/%Y")
         
@@ -40,6 +50,9 @@ def post_new(request):
 
     else:
         form = InputQuery()
+        #form = ExampleForm()
+
+    #return HttpResponse("Form input error!")
     return render(request, 'hlipage/input_form.html', {'form': form})
 
 def download(request):
