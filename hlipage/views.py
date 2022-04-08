@@ -35,8 +35,8 @@ def post_new(request):
             #inputquery.save()
             #return HttpResponse('thank-you.html')
 
-            mindate = form.cleaned_data['min_date'].strftime("%m/%d/%Y")
-            maxdate = form.cleaned_data['max_date'].strftime("%m/%d/%Y")
+            mindate = form.cleaned_data['min_date'].strftime("%Y/%m/%d")
+            maxdate = form.cleaned_data['max_date'].strftime("%Y/%m/%d")
         
             authorlist = form.cleaned_data.get("or_choose_which_author")
 

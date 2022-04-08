@@ -27,7 +27,7 @@ pubmed = PubMed(tool="MyTool", email="cellerk@yahoo.ca")
 def create_citation_output(mdate: str, mxdate: str, alist):
     # Build the query based on the form input (mdate = mindate, mxdate = maxdate, alist = author list (str))
     date_range = "(" +  mdate + "[Date - Publication] : " + mxdate + "[Date - Publication])"
-
+    print(date_range)
     # List of all properly-formatted citations 
     citation = []
 

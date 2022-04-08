@@ -1,16 +1,16 @@
 import pandas as pd
 
 # Andrew Krahn
-Krahn = '''("Krahn A"[Author]) OR ("Krahn AD"[Author])'''
+Krahn = '''(("Krahn A"[Author]) OR ("Krahn AD"[Author]))'''
 
 # Andrew Sandford
 Sandford = '''(("Sandford AJ"[Author]) OR ("Sandford A"[Author]) OR ("Sandford AJ"[Investigator]) OR ("Sandford A"[Investigator])) AND (("University of British Columbia"[Affiliation]) OR ("St. Paul's Hospital"[Affiliation]) OR ("James Hogg Research Centre"[Affiliation]) OR ("Centre for Heart Lung Innovation"[Affiliation]))'''
 
 # Andrew Thamboo
-Thamboo = '''("Thamboo A"[Author]) OR ("Thamboo AV"[Author])'''
+Thamboo = '''(("Thamboo A"[Author]) OR ("Thamboo AV"[Author]))'''
 
 # Bradley Quon
-Quon = '''(("Quon BS"[Author]) OR ("Quon B"[Author]) OR ("Quon, Bradley"[Author - Full]) NOT ("Dwight-Johnson M"[Author])'''
+Quon = '''(("Quon BS"[Author]) OR ("Quon B"[Author]) OR ("Quon, Bradley"[Author - Full]) NOT ("Dwight-Johnson M"[Author]))'''
 
 # Bruce McManus
 McManus = '''(("McManus BM"[Author]) OR ("McManus, B"[Author]) OR ("McManus, Bruce"[Author - Full]) NOT (Smith CF[Author]) NOT (Nugent JK[Author]) NOT (Rosenberg S[Author]) NOT (Carle AC[Author]) NOT (Palta M[Author]) NOT (Moody C[Author]) NOT (Rapport MJ[Author]) NOT (Poehlmann J[Author]) NOT (McCormick M[Author]) NOT (Capistran PS[Author]) NOT (Kotelchuck M[Author]) NOT (Dorman DC[Author]) NOT (Gannotti ME[Author]) NOT (Carle A[Author]))'''
@@ -19,7 +19,7 @@ McManus = '''(("McManus BM"[Author]) OR ("McManus, B"[Author]) OR ("McManus, Bru
 Carlsten = '''("Carlsten C"[Author])'''
 
 # Chris Ryerson
-Ryerson = '''(("Ryerson CJ"[Author]) OR (("Ryerson C"[Author])) AND interstitial) OR ("Ryerson Christopher J"[Author])'''
+Ryerson = '''(("Ryerson CJ"[Author]) OR (("Ryerson C"[Author])) AND interstitial) OR ("Ryerson Christopher J"[Author]))'''
 
 # Chun Seow
 Seow = '''("Seow CY"[Author])'''
@@ -31,19 +31,19 @@ Granville = '''(("Granville D"[Author]) OR ("Granville DJ"[Author]) OR ("Granvil
 DCYang = '''(("Yang DC"[Author]) OR ("Yang D"[Author]) OR ("Yang, Decheng"[Author - Full])) AND (("Centre for Heart Lung Innovation"[Affiliation]) OR ("St. Paul's Hospital"[Affiliation]) OR ("James Hogg Research Centre"[Affiliation]))'''
 
 # Delbert Dorscheid
-Dorscheid = '''("Dorscheid D"[Author]) OR ("Dorscheid DR"[Author]) OR ("Dorscheid, Delbert"[Author - Full])'''
+Dorscheid = '''(("Dorscheid D"[Author]) OR ("Dorscheid DR"[Author]) OR ("Dorscheid, Delbert"[Author - Full]))'''
 
 # Denise Daley
 Daley = '''(("Daley DD"[Author]) OR ("Daley D"[Author]) OR ("Daley, Denise"[Author - Full]) OR ("Daley D"[Investigator])) AND (("Centre for Heart Lung Innovation"[Affiliation]) OR ("St. Paul's Hospital"[Affiliation]) OR ("James Hogg Research Centre"[Affiliation]))'''
 
 # Don Sin
-Sin = '''(("Sin DD"[Author]) OR ("Sin, Don"[Author - Full])) OR ("Sin, Don D"[Investigator])) OR ("Sin, Don"[Investigator]))'''
+Sin = '''(("Sin DD"[Author]) OR ("Sin, Don"[Author - Full]) OR ("Sin, Don D"[Investigator]) OR ("Sin, Don"[Investigator]))'''
 
 # Gordon Francis
 Francis = '''(("Francis GA"[Author]) OR ("Francis, Gordon"[Author - Full])) AND ((University of British Columbia[Affiliation]) OR ("University of Alberta"[Affiliation]) OR ("St. Paul's Hospital"[Affiliation]) OR ("James Hogg Research Centre"[Affiliation]) OR ("University of Washington"[Affiliation]) OR (Wiegman A[Author]) OR (Ur E[Author]) OR (Heinecke JW[Author]) OR (Leiter LA[Author]) OR (Garver WS[Author]) OR ("The Canadian journal of cardiology"[Journal]) OR (Couture P[Author]) OR (Auwerx J[Author]) OR (Taher TH[Author]) OR (Richards WR[Author])) NOT (Kappos L[Author])'''
 
 # Graeme Koelwyn
-Koelwyn = '''("Koelwyn G"[Author]) OR ("Koelwyn GJ"[Author])'''
+Koelwyn = '''(("Koelwyn G"[Author]) OR ("Koelwyn GJ"[Author]))'''
 
 # Honglin Luo
 Luo = '''(("Luo H"[Author]) AND ("Centre for Heart Lung Innovation"[Affiliation] OR "St. Paul's Hospital"[Affiliation] OR "James Hogg Research Centre"[Affiliation]) NOT ("university of georgia"[Affiliation] OR "the chinese university of hong kong"[Affiliation]))'''
@@ -52,13 +52,13 @@ Luo = '''(("Luo H"[Author]) AND ("Centre for Heart Lung Innovation"[Affiliation]
 Hogg = '''(("Hogg JC"[Author]) OR ("Hogg JC"[Investigator])) AND ("Centre for Heart Lung Innovation"[Affiliation] OR "St. Paul's Hospital"[Affiliation] OR "James Hogg Research Centre"[Affiliation])'''
 
 # James Russell
-Russell = '''(("Russell JA"[Author]) AND ("Russell J"[Author])) AND (("Centre for Heart Lung Innovation"[Affiliation]) OR ("University of British Columbia"[Affiliation]) OR ("James Hogg Research Centre"[Affiliation]))'''
+Russell = '''(("Russell JA"[Author]) OR ("Russell J"[Author])) AND (("Centre for Heart Lung Innovation"[Affiliation]) OR ("University of British Columbia"[Affiliation]) OR ("James Hogg Research Centre"[Affiliation]))'''
 
 # Janice Leung
 Leung = '''(("Leung JM"[Author]) OR ("Leung Janice"[Author]) OR ("Leung J"[Author])) AND ("Centre for Heart Lung Innovation"[Affiliation])'''
 
 # John Boyd
-Boyd = '''(("Boyd JH"[Author]) OR ("Boyd J"[Author]) OR ("Boyd, John"[Author - Full])) AND (("St. Paul’s Hospital"[Affiliation]) OR ("James Hogg Research Centre"[Affiliation])) NOT ("Jade Boyd"[Author])'''
+Boyd = '''(("Boyd JH"[Author]) OR ("Boyd J"[Author]) OR ("Boyd, John"[Author - Full])) AND (("St. Paul's Hospital"[Affiliation]) OR ("James Hogg Research Centre"[Affiliation])) NOT ("Jade Boyd"[Author])'''
 
 # Jonathon Leipsic
 Leipsic = '''("Leipsic J"[Author] or "Leipsic JA"[Author])'''
@@ -103,7 +103,7 @@ Tebbutt = '''("Tebbutt SJ"[Author])'''
 Sellers = '''("Sellers S"[Author] OR "Sellers SL"[Author]) AND (("Centre for Heart Lung Innovation"[Affiliation]) OR ("St. Paul's Hospital"[Affiliation]) OR ("James Hogg Research Centre"[Affiliation]))'''
 
 # Stephan van Eeden
-vanEeden = '''("van Eeden SF"[Author]) OR ("van Eeden S"[Author]) OR ("van Eeden, Stephan"[Author - Full]) AND (("Centre for Heart Lung Innovation"[Affiliation]) OR ("St. Paul's Hospital"[Affiliation]) OR ("James Hogg Research Centre"[Affiliation]))'''
+vanEeden = '''(("van Eeden SF"[Author]) OR ("van Eeden S"[Author]) OR ("van Eeden, Stephan"[Author - Full])) AND (("Centre for Heart Lung Innovation"[Affiliation]) OR ("St. Paul's Hospital"[Affiliation]) OR ("James Hogg Research Centre"[Affiliation]))'''
 
 # Tillie Hackett
 Hackett = '''("Hackett TL"[Author])'''
@@ -134,7 +134,7 @@ Wang = '''(33792344
 )'''
 
 # Zachary Laksman
-Laksman = '''("Laksman, Zachary"[Author - Full]) OR ("Laksman Z"[Author]) OR ("Laksman ZW"[Author]) OR ("Laksman ZWM"[Author])'''
+Laksman = '''(("Laksman, Zachary"[Author - Full]) OR ("Laksman Z"[Author]) OR ("Laksman ZW"[Author]) OR ("Laksman ZWM"[Author]))'''
 
 all_PIs = [Krahn, Sandford, Thamboo, Quon, McManus, Carlsten, Ryerson, Seow, Granville, DCYang, Dorscheid, Daley, Sin, Francis, Koelwyn, Luo, Hogg, Russell, Leung, Boyd, Leipsic, Guenette, Walley, McNagny, Brunham, DeMarco, Allard, Bernatchez, Camp, Man, Pare, Ng, Tebbutt, Sellers, vanEeden, Hackett, Tan, Wang, Laksman]
 all_PIs_listofstr = ['Krahn', 'Sandford', 'Thamboo', 'Quon', 'McManus', 'Carlsten', 'Ryerson', 'Seow', 'Granville', 'DCYang', 'Dorscheid', 'Daley', 'Sin', 'Francis', 'Koelwyn', 'Luo', 'Hogg', 'Russell', 'Leung', 'Boyd', 'Leipsic', 'Guenette', 'Walley', 'McNagny', 'Brunham', 'DeMarco', 'Allard', 'Bernatchez', 'Camp', 'Man', 'Pare', 'Ng', 'Tebbutt', 'Sellers', 'vanEeden', 'Hackett', 'Tan', 'Wang', 'Laksman']
