@@ -18,8 +18,8 @@ class InputQuery(forms.Form):
     #select_all_authors = forms.MultipleChoiceField(widget=forms.CheckboxSelectMultiple, choices=[("1", "yes"),("2", "no")], required=False)
 
     or_choose_which_author = forms.MultipleChoiceField(label= "", widget=forms.CheckboxSelectMultiple, choices=clist)
-    min_date = forms.DateField(label= 'Min date in format DD/MM/YYYY: ')
-    max_date = forms.DateField(label= 'Max date in format DD/MM/YYYY: ')
+    min_date = forms.DateField(label= 'Min date in format MM/DD/YYYY: ')
+    max_date = forms.DateField(label= 'Max date in format MM/DD/YYYY: ')
 
 #    def __init__(self, *args, **kwargs):
 #        super(InputQuery, self).__init__(*args, **kwargs)
@@ -57,6 +57,7 @@ class InputQuery(forms.Form):
         max_date = cleaned_data.get("max_date")
 
         if min_date and max_date:
+            # Only do something if both fields are valid so far.
             if max_date < min_date:
                 self.add_error('max_date', " Max date cannot be less than min date.")
                 #raise forms.ValidationError(" Max date cannot be less than min date.") 
