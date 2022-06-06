@@ -2,6 +2,7 @@
 from pymed import PubMed
 import json
 from datetime import date
+import time
 
 from .investigators import all_PIs_dict
 
@@ -38,6 +39,9 @@ def create_citation_output(mdate: str, mxdate: str, alist):
 #       acc = acc+1
        # Execute the query against the API (must be done separately for each PI)
         results = pubmed.query(query, max_results=500)
+
+        # Add a sleep of 1 second to not overload eutils
+        time.sleep(1)
 
          # Loop over the retrieved articles
         for article in results:
